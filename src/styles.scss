@@ -1,0 +1,22 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~src/styles/scss/index.scss";
+@import "~bootstrap/scss/bootstrap";
+button,
+input {
+  outline: 0 !important;
+  &:focus {
+    box-shadow: none !important;
+  }
+  &:visited {
+    box-shadow: none !important;
+  }
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $font-text;
+}

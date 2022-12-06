@@ -1,0 +1,25 @@
+@import "~src/styles/scss/index.scss";
+.book {
+  background-position: center;
+  background-size: cover;
+  .row {
+    width: 100%;
+    margin: 0px;
+    overflow: hidden;
+
+    .col-3 {
+      padding: 0;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .row {
+    display: block !important;
+    .col-9 {
+      max-width: 100%;
+    }
+    .col-3 {
+      max-width: 100%;
+    }
+  }
+}

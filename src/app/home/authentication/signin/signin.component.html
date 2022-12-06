@@ -1,0 +1,36 @@
+<div class="dang-nhap">
+    <form [formGroup]="signinForm" (ngSubmit)="xuLyDangNhap()">
+      <mat-form-field appearance="outline">
+        <mat-label>Tài Khoản</mat-label>
+        <input matInput required formControlName="taiKhoan" type="text"  />
+        <mat-error *ngFor="let i of Message.taiKhoan">
+          <mat-error
+            class="error-message"
+            *ngIf="
+            signinForm.get('taiKhoan').hasError(i.type) &&
+              (signinForm.get('taiKhoan').dirty || signinForm.get('taiKhoan').touched)
+            "
+          >
+            {{ i.message }}
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Mật Khẩu</mat-label>
+        <input matInput required formControlName="matKhau" type="password"  />
+        <mat-error *ngFor="let i of Message.matKhau">
+          <mat-error
+            class="error-message"
+            *ngIf="
+            signinForm.get('matKhau').hasError(i.type) &&
+              (signinForm.get('matKhau').dirty || signinForm.get('matKhau').touched)
+            "
+          >
+            {{ i.message }}
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <button mat-button >ĐĂNG NHẬP</button>
+    </form>
+  </div>
+  

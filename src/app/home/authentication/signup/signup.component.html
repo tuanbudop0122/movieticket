@@ -1,0 +1,90 @@
+<div class="dang-ki">
+    <form [formGroup]="signupForm" (ngSubmit)="xuLyDangKy()">
+      <mat-form-field appearance="outline">
+        <mat-label>Họ & Tên</mat-label>
+        <input matInput type="text" formControlName="hoTen" required />
+        <mat-error *ngFor="let vali of accountValidationMessages.hoTen">
+          <mat-error
+            class="error-message"
+            *ngIf="
+              signupForm.get('hoTen').hasError(vali.type) &&
+              (signupForm.get('hoTen').dirty || signupForm.get('hoTen').touched)
+            "
+          >
+            {{ vali.message }}
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Tài Khoản</mat-label>
+        <input formControlName="taiKhoan" required matInput type="text" />
+        <mat-error *ngFor="let vali of accountValidationMessages.taiKhoan" >
+        <mat-error
+        class="error-message"
+        *ngIf="
+          signupForm.get('taiKhoan').hasError(vali.type) &&
+          (signupForm.get('taiKhoan').dirty || signupForm.get('taiKhoan').touched)
+        "
+        >
+        {{vali.message}}
+        </mat-error>
+  
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Mật Khẩu</mat-label>
+        <input matInput formControlName="matKhau" required type="password" />
+        <mat-error *ngFor="let vali of accountValidationMessages.matKhau" >
+          <mat-error
+          class="error-message"
+          *ngIf="
+            signupForm.get('matKhau').hasError(vali.type) &&
+            (signupForm.get('matKhau').dirty || signupForm.get('matKhau').touched)
+          "
+          >
+          {{vali.message}}
+          </mat-error>
+    
+          </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput type="text" />
+        <mat-error *ngFor="let vali of accountValidationMessages.email" >
+          <mat-error
+          class="error-message"
+          *ngIf="
+            signupForm.get('email').hasError(vali.type) &&
+            (signupForm.get('email').dirty || signupForm.get('email').touched)
+          "
+          >
+          {{vali.message}}
+          </mat-error>
+    
+          </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Số điện thoại</mat-label>
+        <input formControlName="soDt" matInput type="text" />
+        <mat-error *ngFor="let vali of accountValidationMessages.soDt" >
+          <mat-error
+          class="error-message"
+          *ngIf="
+            signupForm.get('soDt').hasError(vali.type) &&
+            (signupForm.get('soDt').dirty || signupForm.get('soDt').touched)
+          "
+          >
+          {{vali.message}}
+          </mat-error>
+    
+          </mat-error>
+      </mat-form-field>
+  
+      <button mat-button type="submit">ĐĂNG KÍ</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,93 @@
+<section class="header">
+  <div class="row">
+    <div class="logo col-2">
+      <img
+        src="./assets/img/web-logo.png"
+        alt=""
+        class="img-fluid"
+        routerLink="/"
+        (click)="goToHome()"
+      />
+    </div>
+    <div class="header-navbar  col-10" >
+      <label for="nav-mobile" class="toggle-button">
+        <i class="fas fa-bars text-dark"></i>
+      </label>
+      <nav class="navbar navbar-expand-lg ">
+        <ul class="navbar-nav" >
+          <li class="nav-item">
+            <a class="nav-link" (click)="goToHome()">Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="goToPhim()">Phim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="goToCumRap()">Lịch chiếu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="goToFooter()">Ứng Dụng</a>
+          </li>
+        </ul>
+     
+
+      <div class="login ">
+        <ng-container *ngIf="!currentUser">
+          <a routerLink="/signin">
+            <i class="fas fa-user"></i>
+            <span>Đăng nhập</span>
+          </a>
+        </ng-container>
+        <ng-container *ngIf="currentUser">
+          <div class="username">
+            Xin chào , {{ currentUser.hoTen }}
+            <small (click)="logOut()"> ĐĂNG XUẤT</small>
+          </div>
+        </ng-container>
+      </div>
+    </nav>
+    <input type="checkbox" hidden name="" class="nav-input" id="nav-mobile">
+    <label for="nav-mobile"  class="nav-bars"></label>
+      <nav class="navbar- navbar-expand-lg ">
+        <label for="nav-mobile" class="X-mobile">
+         
+            <i class="fas fa-times"></i>
+          
+        </label>
+        <ul class="navbar-nav-" >
+          <div class="login- ">
+            <ng-container *ngIf="!currentUser">
+              <a routerLink="/signin">
+                <i class="fas fa-user"></i>
+                <label for="nav-mobile">Đăng nhập</label>
+              </a>
+            </ng-container>
+            <ng-container *ngIf="currentUser">
+              <div class="username-">
+                Xin chào , {{ currentUser.hoTen }}
+                <small (click)="logOut()"> ĐĂNG XUẤT</small>
+              </div>
+            </ng-container>
+          </div>
+          <li class="nav-item-">
+            <label for="nav-mobile"  class="nav-link-" (click)="goToHome()">Trang chủ</label>
+          </li>
+          <li class="nav-item-">
+            <label for="nav-mobile" class="nav-link-" (click)="goToPhim_resp()">Phim</label>
+          </li>
+          <li class="nav-item-">
+            <label for="nav-mobile" class="nav-link-" (click)="goToCumRap_resp()">Lịch chiếu</label>
+          </li>
+          <li class="nav-item-">
+            <label for="nav-mobile"  class="nav-link-" (click)="goToFooter()">Ứng Dụng</label>
+          </li>
+          
+          
+        </ul>
+     
+
+      
+    </nav>
+    
+    </div>
+  </div>
+</section>
