@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
     this.auth.currentUser.subscribe({
       next: (res: any) => {
         if (res !== null) {
-          this.currentUser = res.content;
+          this.currentUser = res;
         }
       },
     });
